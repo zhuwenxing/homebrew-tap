@@ -5,20 +5,20 @@
 class MilvusBackup < Formula
   desc ""
   homepage "https://github.com/zilliztech/milvus-backup"
-  version "0.4.0"
+  version "0.4.1"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/zhuwenxing/milvus-backup/releases/download/v0.4.0/milvus-backup_Darwin_x86_64.tar.gz"
-      sha256 "73145cefa1132bc7a31d8d17d4d0930abc2010ce3b39cf13e0dfe540a1641625"
+      url "https://github.com/zhuwenxing/milvus-backup/releases/download/v0.4.1/milvus-backup_Darwin_x86_64.tar.gz"
+      sha256 "1d6ff9bc3dd6a216a4a174c197e652d2bc3b3928fec0a0005db58a4809bd880b"
 
       def install
         bin.install "milvus-backup"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/zhuwenxing/milvus-backup/releases/download/v0.4.0/milvus-backup_Darwin_arm64.tar.gz"
-      sha256 "141afb3fdfa90ac3964bdadc2731d6ac53e29a2a3aac70b2748be95293518819"
+      url "https://github.com/zhuwenxing/milvus-backup/releases/download/v0.4.1/milvus-backup_Darwin_arm64.tar.gz"
+      sha256 "d2d04fa7392c0e0c37410feea9c2adff1f2527ae75e8e852c9418cc0ace8f14d"
 
       def install
         bin.install "milvus-backup"
@@ -27,17 +27,17 @@ class MilvusBackup < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/zhuwenxing/milvus-backup/releases/download/v0.4.0/milvus-backup_Linux_x86_64.tar.gz"
-      sha256 "b263e44c692297880230a42b210c2cdfee923537c2255742f0dcc2af46189ea8"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/zhuwenxing/milvus-backup/releases/download/v0.4.1/milvus-backup_Linux_arm64.tar.gz"
+      sha256 "c58d0f3736198b80dd36c98493e2a171ad3e38b7e671ade128f3742de0fd52ba"
 
       def install
         bin.install "milvus-backup"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/zhuwenxing/milvus-backup/releases/download/v0.4.0/milvus-backup_Linux_arm64.tar.gz"
-      sha256 "3031635c06c189715e637728d8a78f5956626805ade932d6eb7b28e0401398c7"
+    if Hardware::CPU.intel?
+      url "https://github.com/zhuwenxing/milvus-backup/releases/download/v0.4.1/milvus-backup_Linux_x86_64.tar.gz"
+      sha256 "0dda6a83c4fa9fef6c35fb7b0e526b916807c7ce61e556f1a8f82382317a30ba"
 
       def install
         bin.install "milvus-backup"
